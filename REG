@@ -1,0 +1,168 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Sign Up Form</title>
+<script type="text/javascript" src="js/jquery-1.9.1.js"></script>
+<script type="text/javascript" src="js/jquery.validate.js"></script>
+<link rel="stylesheet" type="text/css"
+	href="bootstrap/css/bootstrap.css">
+
+<script type="text/javascript" src="bootstrap/js/bootstrap.min.js">
+	
+</script>
+
+
+<!-- <link rel="stylesheet" type="text/css" href="css/mycss.css"> -->
+</head>
+
+<body>
+	<div class="container-fluid">
+	
+<%@include file="header.jsp" %>
+<ol class="breadcrumb">
+
+			<!-- <li><a href="login.jsp">Home</a></li> -->
+
+			<li><a href="#">registration form</a></li>
+</ol>
+
+		<div class="container" id="main-content-div-signup">
+
+			<div class="row">
+
+				<div class="col-md-2"></div>
+
+				<div class="col-md-8">
+
+					<c:if test="${ERROR ne null }">
+
+						<div class="alert alert-danger">
+
+							<h3>${ERROR}</h3>
+						</div>
+
+
+					</c:if>
+
+
+					<div class="panel panel-primary" id="login">
+
+						<div class="panel-heading">
+
+							<h4 style="color: blue">registration Form</h4>
+						</div>
+
+						<div class="panel-body" id="addscroll1">
+
+
+
+							<form action="signup.do" id="signupform" method="post">
+
+
+								<div class="form-group">
+
+									<label for="Name" class="glyphicon glyphicon-user">Name:</label><em>*</em>
+									<input type="text" id="Name" name="name" class="form-control"
+										placeholder="Enter Name" />
+								</div>
+								<div class="form-group">
+
+									<label for="Age" class="glyphicon glyphicon-user">Age:</label><em>*</em>
+									<input type="text" id="Age" name="age" class="form-control"
+										placeholder="Enter Age" />
+								</div>
+
+							<div class="radio">
+									<label for="gender" class="glyphicon glyphicon-user">Gender:</label><em>*</em>
+									<label for="male" class="glyphicon glyphicon-user"><input
+										type="radio" name="gender" value="male" /> Male</label> <label
+										for="female" class="glyphicon glyphicon-user"><input
+										type="radio" name="gender" value="female" /> Female</label>
+								</div>
+
+							<div class="form-group">
+
+									<label for="email" class="glyphicon glyphicon-user">E-mail:</label><em>*</em>
+									<input type="email" id="email" name="email"
+										class="form-control" placeholder="Enter Email" />
+
+
+								</div>
+
+								<div class="form-group">
+
+									<label for="password" class="glyphicon glyphicon-lock">Password:</label><em>*</em>
+									<input type="password" id="passsword" name="password"
+										class="form-control" placeholder="Enter Password" />
+
+								</div>
+
+								<div class="form-group">
+									<label for="mobile" class="glyphicon glyphicon-phone">Mobile:
+									</label><em>*</em><input type="text" id="mobile" name="mobile"
+										class="form-control" placeholder="Enter Mobile" maxlength="10" />
+								</div>
+
+								<div class="form-group">
+
+									<label for="securityqus" class="glyphicon glyphicon-lock">Security
+										Question </label><em>*</em> <select class="form-control"
+										name="securityqus">
+
+										<option value="na" selected>-------------Select Your
+											Security Question---------------</option>
+
+										<option value="what is your nick name">What is your
+											nick name.</option>
+
+										<option value="where is your native place">Where is
+											your native place</option>
+
+										<option value="What is your pet name.">What is your
+											pet name</option>
+
+									</select>
+								</div>
+
+								<div class="form-group">
+
+									<label for="answer" class="glyphicon glyphicon-user">Answer:</label><em>*</em>
+									<input type="text" id="answer" name="answer"
+										class="form-control" placeholder="Enter Answer" />
+								</div>
+								<div class="form-group">
+
+									<label class="col-md-3"> <input type="submit"
+										id="submit" name="submit" class="form-control btn btn-primary"
+										value="Signup" /> </label> <label class="col-md-2"></label> <label
+										class="col-md-3"> <input type="reset" id="reset"
+										name="reset" class="form-control btn btn-danger"
+										value="Cancel" 
+										onclick="window.Location='userlogin.jsp'"/> </label>
+								</div>
+
+							</form>
+							<script type="text/javascript">
+								$("#signupform").validate();
+							</script>
+						</div>
+
+						<div class="panel-footer"></div>
+
+					</div>
+
+				</div>
+
+				<div class="col-md-2"></div>
+			</div>
+		</div>
+
+		
+	</div>
+	<jsp:include page="footer.jsp"></jsp:include>
+</body>
+</html>
